@@ -1,5 +1,18 @@
-"set langmenu=pl_PL.UTF-8
-"language pl_PL
+call plug#begin('~/.vim/bundle')
+Plug  'tpope/vim-fugitive'
+Plug  'kien/ctrlp.vim'
+Plug  'bling/vim-airline'
+Plug  'scrooloose/syntastic'
+Plug  'szw/vim-tags'
+Plug  'majutsushi/tagbar'
+Plug  'taglist.vim'
+Plug  'OmniCppComplete'
+Plug  'a.vim'
+Plug  'mileszs/ack.vim'
+
+call plug#end()
+set langmenu=pl_PL.UTF-8
+language pl_PL
 set shell=/bin/bash
 set wrapscan
 set ch=2
@@ -51,8 +64,6 @@ inoremap  <esc> <NOP>
 set tabstop=2
 set shiftwidth=2
 set expandtab
-map <silent> <c-j> <c-w>jj<CR>
-map <silent> <c-k> <c-w>jk<CR>
 set pastetoggle=<F6>
 map n nzz
 map N Nzz
@@ -61,4 +72,15 @@ map [[ [[zz
 colo solarized
 set background=dark
 syntax on
-"set guifont=Terminus\ 14
+
+"CtrlpP
+map <c-b> :CtrlPBuffer<CR>
+let g:ctrlp_working_path_mode = 'ra'
+
+"Ag
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+map f4 :Ack <c-r><c-w> /opt/dev/sierra/atb3_root/ <CR> 
+map <c-f> :Ack <c-r><c-w> /opt/dev/sierra/atb3_root/ <CR> 
+
