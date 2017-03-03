@@ -1,0 +1,43 @@
+source ~/.functions
+alias reload="source ~/.bashrc"
+
+#Git aliases
+alias gs='git status -sb'
+alias gl='git ls'
+alias gll='git ll'
+alias gla='git log --author='
+alias gp='git pull --rebase'
+alias gdf='git diff HEAD'
+
+# cd commands
+alias cdr='goto_project'
+alias ..='cd ..'
+
+#prompt commands
+alias swap='swap_prompt'
+
+alias ls='ls -lh --color=auto'
+alias lsa='ls -lah --color=auto'
+alias lsg='ls -lah --color=auto | grep -i'
+
+# grep
+alias grep='grep --color'
+
+alias c='clear'
+#My scripts
+
+alias f=customfind
+alias l=customlocate
+
+alias vim="nvim"
+alias v="nvim"
+
+#fakapy
+alias vun="nvim"
+alias vin="nvim"
+alias bim="nvim"
+
+#better which
+alias which="type -a"
+
+alias tmp="tmp"

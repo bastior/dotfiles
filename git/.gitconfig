@@ -1,0 +1,22 @@
+[user]
+	email = johndoe@mail.com
+	name = John Doe
+[core]
+	editor = vim
+[log]
+	decorate = full
+[mergetool "meld"]
+	path = meld
+[diff]
+  tool = mymeld
+[merge]
+  tool = mymeld
+  conflictstyle = diff3
+[color]
+	ui = true
+[alias]
+  ls = log --pretty=format:"%C(yellow)%h\\ %Creset%s%Cgreen\\ [%cn]" --decorate
+  ll = log
+  fl = log -u
+[mergetool "mymeld"]
+   cmd = /app/meld/1.8.0/RHEL6/bin/meld --diff $BASE $LOCAL --diff $BASE $REMOTE --auto-merge $LOCAL $BASE $REMOTE --output $MERGED

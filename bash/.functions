@@ -1,0 +1,28 @@
+function customfind() { find . ! -readable -prune -o -name "$@" -print ;}
+function customlocate() { locate -d ~/.locate.db  "$@" ;}
+
+
+function goto_project()
+{
+  if [[ -n $PROJECT_BASE ]]
+    then
+    cd $PROJECT_BASE
+  else
+    echo "Project root is not set!"
+  fi
+}
+
+function swap_prompt()
+{
+  if [ "$SIMPLE_PROMPT" -eq 1 ]
+  then
+    export SIMPLE_PROMPT=0
+  else
+    export SIMPLE_PROMPT=1
+  fi
+}
+
+function tmp()
+{
+  `cat ~/tmp.txt`
+}
